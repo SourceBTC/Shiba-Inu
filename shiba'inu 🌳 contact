@@ -146,3 +146,7 @@ https://docs.google.com/document/d/1A-cCYirXz8r9-d9viiM_HQYJ3qIhcBU5AsHc4TL-GEU/
 [![Build Status](https://travis-ci.org/datacite/lupo.svg?branch=master)](https://travis-ci.org/datacite/lupo) [![Code Climate](https://codeclimate.com/github/datacite/lupo/badges/gpa.svg)](https://codeclimate.com/github/datacite/lupo) [![Test Coverage](https://codeclimate.com/github/datacite/lupo/badges/coverage.svg)](https://codeclimate.com/github/datacite/lupo/coverage)
 <!-- [![Identifier](https://img.shields.io/badge/doi-10.5438%2Ft1jg--hvhn-fca709.svg)](https://doi.org/10.5438/t1jg-hvhn) -->
 [![Build Status](https://travis-ci.org/datacite/levriero.svg?branch=master)](https://travis-ci.org/datacite/levriero) [![Code Climate](https://codeclimate.com/github/datacite/levriero/badges/gpa.svg)](https://codeclimate.com/github/datacite/levriero) [![Test Coverage](https://codeclimate.com/github/datacite/levriero/badges/coverage.svg)](https://codeclimate.com/github/datacite/levriero/coverage)
+The agent pool assigned to this job has hit their MacOs concurrency limits
+Requested labels: macos-latest
+Job defined at: SecurityBTC/GoogleSignIn-iOS/.github/workflows/objective-c-xcode.yml@refs/heads/main
+Waiting for a runner to pick up this job
