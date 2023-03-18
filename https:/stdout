@@ -1,0 +1,6 @@
+output {
+  stdout { codec => json }
+  file {
+    path => "${OUTPUT_DIR}"
+  }
+}
