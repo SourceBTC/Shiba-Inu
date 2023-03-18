@@ -1,0 +1,66 @@
+input {
+	elasticsearch { 
+		hosts => ["${ES_HOST}"] 
+		index => "${RESOLUTION_INDEX}" 
+    response_type => "aggregations"
+    query => '
+    {
+      "query": {
+        "query_string": {
+          "query": "*"
+        }
+      },
+      "aggregations": {
+        "dois": {
+          "terms": {
+            "field": "doi",
+            "size": 300,
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "access_method": {
+              "terms": {
+                "field": "access_method",
+                "size": 100,
+                "min_doc_count": 1
+              },
+              "aggs": {
+                "session": {
+                  "terms": {
+                    "field": "session",
+                    "size": 100,
+                    "min_doc_count": 1
+                  }
+                },
+                "unqiue": {
+                  "cardinality": {
+                    "field": "session"
+                  }
+                }
+              }
+            },
+            "total": {
+              "terms": {
+                "field": "access_method",
+                "size": 300,
+                "min_doc_count": 1
+              }
+            }
+          }
+        }
+      }
+    }'
+    size => 0
+    scroll => "4m"
+    docinfo => true
+    # schedule => "* * * * *"
+	}
+}
+
+
+
+
+
+
+#https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-composite-aggregation.html
+    # schedule => "* * * * *"
