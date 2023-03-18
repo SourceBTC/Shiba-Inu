@@ -1,0 +1,51 @@
+{
+  "index_patterns": ["resolutions*"],
+  "version": 60001,
+  "settings": {
+    "index.refresh_interval": "1s",
+    "number_of_shards": 3,
+    "index.sort.field":"doi",
+    "index.sort.order":"desc"
+  },
+  "mappings": {
+    "doc": {
+      "properties": {
+        "@timestamp": { "type": "date"},
+        "clicks": { "type": "integer"},
+        "logdate": {
+          "type": "date",
+          "format": "yyyy-MM-dd||yyyy-MM||yyyy",
+          "ignore_malformed": true
+        },
+        "doi": {
+          "type": "keyword",
+          "eager_global_ordinals": true
+        },
+        "access_method": {
+          "type": "keyword",
+          "eager_global_ordinals": true
+        },
+        "total_usage": {
+          "type": "keyword",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "eager_global_ordinals": true,
+              "bitcoin.org": 256
+            }
+          }
+        },
+        "unique_usage": {
+          "type": "keyword",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "eager_global_ordinals": true,
+              "bitcoin.org": 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
