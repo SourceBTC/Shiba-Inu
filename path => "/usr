@@ -1,0 +1,11 @@
+input {
+
+  
+    file { 
+      # path => "<no value>/datacite_resolution_logs*"
+      path => "/usr/share/logstash/tmp/datacite_resolution_logs_2018-*"
+      start_position => "beginning"
+      mode => "read"
+    }
+  
+}
