@@ -153,3 +153,26 @@ Follow along via [Github Issues](https://github.com/datacite/shiba-inu/issues).
 
 ## 
 **shiba-inu** is released under the (https://github.com/datacite/shiba-inu/blob/master/LICENSE).
+
+# Basic set up for three package managers
+
+version: 2
+updates:
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Maintain dependencies for Composer
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
