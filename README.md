@@ -462,52 +462,19 @@ bundle exec rspec spec after_script:
 ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 after_success:
 
-docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-
-REPO=datacite/lupo;
-
-AUTO_DEPLOY=false;
-
-if [ "${TRAVIS_TAG?}" ]; then docker build -f Dockerfile -t $REPO:$TRAVIS_TAG .; docker push $REPO:$TRAVIS_TAG; echo "Pushed to" $REPO:$TRAVIS_TAG; AUTO_DEPLOY=true; elif [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then docker build -f Dockerfile -t $REPO .; docker push $REPO; echo "Pushed to" $REPO; AUTO_DEPLOY=true; else docker build -f Dockerfile -t $REPO:$TRAVIS_BRANCH .; docker push $REPO:$TRAVIS_BRANCH; echo "Pushed to" $REPO:$TRAVIS_BRANCH; fi
-
-if [ "$AUTO_DEPLOY" == "true" ]; then wget https://github.com/jwilder/dockerize/releases/download/v0.6.0/dockerize-linux-amd64-v0.6.0.tar.gz; tar -xzvf dockerize-linux-amd64-v0.6.0.tar.gz; rm dockerize-linux-amd64-v0.6.0.tar.gz; export GIT_SHA=$(git rev-parse --short HEAD); export GIT_REVISION=$(git rev-parse HEAD); export GIT_TAG=$(git describe --tags $(git rev-list --tags --max-count=1));
-
-git clone "https://${TRAVIS_SECURE_TOKEN}@github.com/datacite/mastino.git"; ./dockerize -template vendor/docker/_lupo.auto.tfvars.tmpl:mastino/stage/services/client-api/_lupo.auto.tfvars;
-
-sentry-cli releases new lupo:${GIT_TAG} --finalize --project lupo;
-
-if [ "${TRAVIS_TAG?}" ]; then ./dockerize -template vendor/docker/_lupo.auto.tfvars.tmpl:mastino/prod-eu-west/services/client-api/_lupo.auto.tfvars; ./dockerize -template vendor/docker/_lupo.auto.tfvars.tmpl:mastino/test/services/client-api/_lupo.auto.tfvars; sentry-cli releases deploys lupo:${GIT_TAG} new -e production; else sentry-cli releases deploys lupo:${GIT_TAG} new -e stage; fi
-
-sentry-cli releases set-commits --auto lupo:${GIT_TAG};
-
-cd mastino; git remote; git config user.email ${DOCKER_EMAIL}; git config user.name ${DOCKER_USERNAME};
-
-if [ "${TRAVIS_TAG?}" ]; then git add prod-eu-west/services/client-api/_lupo.auto.tfvars; git add test/services/client-api/_lupo.auto.tfvars; git commit -m "Adding lupo git variables for commit tagged ${TRAVIS_TAG?}"; git push "https://${TRAVIS_SECURE_TOKEN}@github.com/datacite/mastino.git" master; else git add stage/services/client-api/_lupo.auto.tfvars; git commit -m "Adding lupo git variables for latest commit"; git push "https://${TRAVIS_SECURE_TOKEN}@github.com/datacite/mastino.git" master; fi fi
-
-notifications: slack: datacite:Wt8En0ALoTA6Kjc5EOKNDWxN
-
-B.
-email: false } name;shiba token } build; separation codes without affecting values }✓ 1.3.3.3 'johhny`orkut script " '3.J\CPF' {z.O'}] 0.9z
-
- johhny]`0.0 =e'
- {1.0} {2.0} {3.0} {0.4} 
-  z/ .  ]>? matrix
-     %> 
-z.cc??? .
-
-magical mistakes; 1.10.00.010.2028.0382 https <a.j/> <a.j/> <a.j/> continue magic error ; dynamic reading https://shibatoken.com/ Deliver original blockchain protocol log/* shiba inu token recruitment :9"a' tmp/* shiba inu token recruitment :9"a' dist/* shiba inu token recruitment :9"a' node_modules/* shiba inu token recruitment :9"a' electron-out/* shiba inu token recruitment :9"a' .env.* shiba inu token recruitment :9"a' .env.* shiba inu token recruitment :9"`a'
-
-{ " " "\n", " "funder1" : "https://doi.org/10.13039/501100001659\",\n", " "funder2" : "https://doi.org/10.13039/501100001665\",\n", " "funder3" : "https://doi.org/10.13039/501100001711\"\n", "}\n", "\n", "funderId2Acronym = {\n", " "https://doi.org/10.13039/501100001659\" : "DFG",\n", " "https://doi.org/10.13039/501100001665\" : "ANR",\n", " "https://doi.org/10.13039/501100001711\" : "SNF"\n", srv: 9.1 <link - ### amanciojsilvjr 09.09.77 <aj/> https://90.23.63.320.45.00000 srv: 9.a <link -### amanciojsilvjr 09.09.77 https://90.23.63.320.45.00000 srv: 9.5 <link -### amanciojsilvjr 09.09.77 <aj/> https://90.23.63.320.45.00000 srv: 9.g < link -### amanciojsilvjr 09.09.77 https://90.23.63.320.45.00000 srv: 9.9 <link -### amanciojsilvjr 09.09.77 <aj/> https://90.23.63.320.45.00000 srv: 9.h < link -### amanciojsilvjr 09.09.77 https://90.23.63.320.45.00000 srv: 9.10 <link -### amanciojsilvjr 09.09.77 <aj/> https://90.23.63.320.45.00000 {v@2} 1.1.1.1.1.0.01.01.01.01.01.01.01.01. https://g.page/ false:6.0.0.0 false:6.7.0.1 false:2.8.1.0 false:6.0.0.0 S.$ H.$ I.$  B.$ c.c 'github@shib #dynamic reading of smooth website gliding smoothly beautiful  @group-world@ & 'work'link" 9.2'6.5.0'1.0.'3]} q.2'h.5.0'i.0.'3]} 5.8'2.6.1'1.0.'9]} 7.9'4.3.1'3.7.'3]} u.2'6.o.0'1.p.'3]} p.2'q.5.g'1.0.'3]} j.2'6.l.0'1.o.'3]} 9.2'6.5.0'1.0.'3]} countiner:svr://srv: 9.1 <link - ### amanciojsilvjr 08.09.77 https://80.23.63.320.45.00000 srv: 9.a <link -### amanciojsilvjr 08.09.77 <aj/> https://80.23.63.320.45.00000 srv: 9.5 <link -### amanciojsilvjr 08.09.77 https://80.23.63.320.45.00000 srv: 9.g < link -### amanciojsilvjr 08.09.77 <aj/> https://80.23.63.320.45.00000 srv: 9.9 <link -### amanciojsilvjr 08.09.77 https://80.23.63.320.45.00000 srv: 9.h < link -### amanciojsilvjr 08.09.77 <aj/> https://80.23.63.320.45.00000 srv: 9.10 <link -### amanciojsilvjr 08.09.77 https://80.23.63.320.45.00000 {v@2} 1.1.1.1.1.0.01.01.01.01.01.01.01.01. https://g.page/ false:8.0.0.0 false:8.7.0.1 false:8.8.1.0 false:6.0.0.0 S.$ H.$ I.$ B.$ c.c 'github@shib #dynamic reading of smooth website gliding smoothly beautiful @group-world@ & 'work'link" 8.2'6.5.0'1.0.'3]} q.2'h.5.0'i.0.'3]} 5.8'2.6.1'1.0.'9]} 8.9'4.3.1'3.7.'3]} u.2'6.o.0'1.p.'3]} p.2'q.5.g'1.0.'3]} j.2'6.l.0'1.o.'3]} 8.2'6.5.0'1.0.'3]}
-* Fork the project
-* Write tests for your new feature or a test that reproduces a bug
-* Implement your feature or make a bug fix
-* Do not mess with Rakefile, version or history
-* Commit, push and make a pull request. Bonus points for topical branches.
-
-## 
-**shiba-inu** is released under the (https://github.com/datacite/shiba-inu/blob/master/LICENSE).
-
-# Basic set up for three package managers
+name: 'Wait'
+description: 'Wait a designated number of milliseconds'
+inputs:
+  milliseconds:  # id of input
+    description: 'number of milliseconds to wait'
+    required: true
+    default: '1000'
+outputs:
+  time: # output will be available to future steps
+    description: 'The current time after waiting'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
 
 version: 2
 updates:
