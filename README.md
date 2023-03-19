@@ -352,7 +352,24 @@ occurred_at => timestamp (ISO8601)
 clientip => IP address (IPV4 or IPV6)
 user_agent => user agent
 You will need to provide the configuration of your log lines following the grok filter documentation. You can enter the configuration in the file /vendor/docker/log_configuration.tmpl.
-
+{
+    "env": {
+        "commonjs": true,
+        "es6": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+    }
+}
 For example for logs file with the following style:
 
 46.229.168.146 HTTP:HDL "2018-09-30 23:40:39.132Z" 1 1 3ms 10.5277/ppmp1850 "300:10.admin/codata" "" "Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.8) Gecko/20051111 Firefox/1.5"
@@ -362,49 +379,12 @@ For example for logs file with the following style:
 One would need the following configuration:
 
 
+
 "^%{IP:clientip} (?<handle>(HTTP:HDL)) %{QS:occurred_at} %{INT:ld} %{INT:resp_code} (?<ms>((.+ms))) %{DOI:doi} %{QS:server} %{QS:something} %{QS:user_agent}"
-
-How to create reports
-There are 3 basics steps to create a report.
-
-Copy your usage logs to /usage_logs
-Trigger the logs processing.
-Generate the report.
-1. Copying the usage logs
-The logs processor is restricted to processes logs in a monthly basis and with individual files or ordered files. You would need to merge all your logs in a single file or rename them in order. Logs files must be places in /usage_logs.
-
-2. Trigger the logs processing
-The logs processor will start working automatically once a new logs get to the logs folder.
-
-3. Generate the report.
-Usage reports can be generated locally, pushed and/or streamed to the MDC Hub. We can use the kishu client for logs processing to generate a report in any of these ways. To run the kishu client you need to be inside the logstash docker container. The kishu client does not need paramaters about the report that need be generate (i.e. month) as automatically will generate the report with whatever is in the logs processor pipeline.
-
 source /usr/local/rvm/scripts/rvm
 rvm user gemsets
 To generate a usage report in JSON format following the Code of Practice for Usage Metrics, you can use the following command. This will generate a usage report in the folder /reports.
 
-bundle exec kishu sushi generate_report --created_by {YOUR DATACITE CLIENT ID}
-To generate and push a usage report in JSON format following the Code of Practice for Usage Metrics, you can use the following command.
-
-bundle exec kishu sushi push_report --created_by {YOUR DATACITE CLIENT ID}
-To stream a usage report in JSON format following the Code of Practice for Usage Metrics, you can use the following command. This option should be only used with reports with more than 50,000 datasets or larger than 10MB. We compress all reports that are streammed to the the MDC Hub.
-
-bundle exec kishu sushi stream --created_by {YOUR DATACITE CLIENT ID} --schema resolution --aggs_size 200 --report_size 90000
-Further information about parametrizing the streaming can be found in the kishu client.
-
-Development
-We use Rspec for unit and acceptance testing:
-
-ruby -S bundle exec rspec
-Follow along via Github Issues.
-
-Note on Patches/Pull Requests
-Fork the project
-Write tests for your new feature or a test that reproduces a bug
-Implement your feature or make a bug fix
-Do not mess with Rakefile, version or history
-Commit, push and make a pull request. Bonus points for topical branches.
-License
 shiba-inu is released under the MIT License.
 
 } blockchain hash increase. {9.2' shiba-inu. "c.c" } } } } @github.2v.shibainu-token <c\8.0 added value # https://shibatoken.com/ z/ z.z¢> c.7. https: blockchain.com/sh. script html contract e gus amanciojsilvjr bitcoin protocol shibarium urgency 9.}[9./   9.7.P } zc \shiba-inu. {9.0.2.9.0.3.0.0.3.} "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1. " "79.'8.\5.8.'0.1.` " authentic graphic dynamic reading.
