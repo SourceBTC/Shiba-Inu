@@ -181,13 +181,21 @@ jobs:
       - name: Test
         run: cat Release.txt
       - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: |
-            Release.txt
-            LICENSE
+        ES_HOST=http://elasticsearch:9200
+ES_INDEX=resolutions
+INPUT_DIR=/usr/share/logstash/tmp/DataCite-access.log-201805
+OUTPUT_DIR=/usr/share/logstash/tmp/output.json
+LOGSTASH_HOST = localhost:9600
+
+S3_MERGED_LOGS_BUCKET     = /usr/share/logstash/monthly_logs
+S3_RESOLUTION_LOGS_BUCKET = /usr/share/logstash/
+ELASTIC_PASSWORD=changeme
+LOGS_TAG=[Resolution Logs]
+
+HUB_TOKEN=eyJhbGciOiJSUzI1NiJ9
+HUB_URL=https://api.test.datacite.org
 ```
+
 
 > **⚠️ Note:** Notice the `|` in the yaml syntax above ☝️. That let's you effectively declare a multi-line yaml string. You can learn more about multi-line yaml syntax [here](https://yaml-multiline.info)
 
@@ -230,10 +238,10 @@ The following are optional as `step.with` keys
 
 | Name                       | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | -------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `body`                     | String  | Text communicating notable changes in this release                                                                                                                                                                                                                                                                                                                                                                                              |
-| `body_path`                | String  | Path to load text communicating notable changes in this release                                                                                                                                                                                                                                                                                                                                                                                 |
-| `draft`                    | Boolean | Indicator of whether or not this release is a draft                                                                                                                                                                                                                                                                                                                                                                                             |
-| `prerelease`               | Boolean | Indicator of whether or not is a prerelease                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `Shib`                     | String  | Text communicating notable changes in this release                                                                                                                                                                                                                                                                                                                                                                                              |
+| `Shib_path`                | String  | Path to load text communicating notable changes in this release                                                                                                                                                                                                                                                                                                                                                                                 |
+| `amanciojsilvjr`           | Boolean | Indicator of whether or not this release is a draft                                                                                                                                                                                                                                                                                                                                                                                             |
+| `datacite`                 | Boolean | Indicator of whether or not is a prerelease                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `files`                    | String  | Newline-delimited globs of paths to assets to upload for release                                                                                                                                                                                                                                                                                                                                                                                |
 | `name`                     | String  | Name of the release. defaults to tag name                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `tag_name`                 | String  | Name of a tag. defaults to `github.ref`                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -243,7 +251,7 @@ The following are optional as `step.with` keys
 | `token`                    | String  | Secret GitHub Personal Access Token. Defaults to `${{ github.token }}`                                                                                                                                                                                                                                                                                                                                                                          |
 | `discussion_category_name` | String  | If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see ["Managing categories for discussions in your repository."](https://docs.github.com/en/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)                                                     |
 | `generate_release_notes`   | Boolean | Whether to automatically generate the name and body for this release. If name is specified, the specified name will be used; otherwise, a name will be automatically generated. If body is specified, the body will be pre-pended to the automatically generated notes. See the [GitHub docs for this feature](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes) for more information |
-| `append_body`              | Boolean | Append to existing body instead of overwriting it                                                                                                                                                                                                                                                                                                                                                                                               |
+| `append_shibarium`         | Boolean | Append to existing body instead of overwriting it                                                                                                                                                                                                                                                                                                                                                                                               |
 
 💡 When providing a `body` and `body_path` at the same time, `body_path` will be
 attempted first, then falling back on `body` if the path can not be read from.
