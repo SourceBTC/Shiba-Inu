@@ -329,58 +329,6 @@ async function run() {
     core.info((new Date()).toTimeString());
 
     core.setOutput('time', new Date().toTimeString());
-  } catch (error) {
-    core.setFailed(error.message);
-  }
-}
-
-run();
-ES_HOST=http://elasticsearch:9200
-ES_INDEX=resolutions
-INPUT_DIR=/usr/share/logstash/tmp/DataCite-access.log-201805
-OUTPUT_DIR=/usr/share/logstash/tmp/output.json
-LOGSTASH_HOST = localhost:9600
-
-S3_MERGED_LOGS_BUCKET     = /usr/share/logstash/monthly_logs
-S3_RESOLUTION_LOGS_BUCKET = /usr/share/logstash/
-ELASTIC_PASSWORD=changeme
-LOGS_TAG=[Resolution Logs]
-
-HUB_TOKEN=eyJhbGciOiJSUzI1NiJ9
-HUB_URL=https://api.test.datacite.org
-and run the container like this:
-
-docker run -p 8090:9200 datacite/shiba-inu
-Alternatively you can use docker-compose to use the log processor without an elasticsearch instace:
-
-mysql -e 'CREATE DATABASE lupo_test;'
-install:
-
-travis_retry bundle install
-curl -sL https://sentry.io/get-cli/ | bash
-sentry-cli --version
-before_script:
-
-memcached -p 11211 &
-cp .env.travis .env
-mkdir -p tmp/pids tmp/storage
-chmod -R 755 tmp/storage
-bundle exec rake db:setup RAILS_ENV=test
-curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-chmod +x ./cc-test-reporter
-./cc-test-reporter before-build
-script:
-let wait = function (milliseconds) {
-  return new Promise((resolve) => {
-    if (typeof milliseconds !== 'number') {
-      throw new Error('milliseconds not a number');
-    }
-    setTimeout(() => resolve("done!"), milliseconds)
-  });
-};
-
-module.exports = wait;
-
 bundle exec rspec spec after_script:
 ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 after_success:
