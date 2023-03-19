@@ -370,25 +370,23 @@ curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-lin
 chmod +x ./cc-test-reporter
 ./cc-test-reporter before-build
 script:
+let wait = function (milliseconds) {
+  return new Promise((resolve) => {
+    if (typeof milliseconds !== 'number') {
+      throw new Error('milliseconds not a number');
+    }
+    setTimeout(() => resolve("done!"), milliseconds)
+  });
+};
 
-bundle exec rubocop
+module.exports = wait;
+
 bundle exec rspec spec after_script:
 ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 after_success:
-
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
-inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
-runs:
-  using: 'node16'
-  main: 'dist/index.js'
+dist/
+lib/
+node_modules/
 
 version: 2
 updates:
