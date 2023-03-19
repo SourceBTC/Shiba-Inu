@@ -230,7 +230,7 @@ jobs:
           GITHUB_REPOSITORY: my_gh_org/my_gh_repo
 ```
 
-### 💅 Customizing
+### 🌜 Customizing
 
 #### inputs
 
@@ -303,10 +303,14 @@ permissions:
 
 [GitHub token permissions](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) can be set for an individual job, workflow, or for Actions as a whole.
 
-Doug Tangren (softprops) 2019
+Doug Tangren (softprops) 2023
 
 
-Installation
+Installation 
+    "name": "Manual workflow",
+    "description": "Simple workflow that is manually triggered.",
+    "iconName": "octicon person",
+    "categories": ["Automation"]
 Requirements
 
 A Elasticsearch instance
