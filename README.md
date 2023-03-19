@@ -18,7 +18,7 @@ forked from datacite/shiba-inu
   📦 :octocat:
 </div>
 <h1 align="center">
-  action gh-release
+  shiba-inu blockchain
 </h1>
 
 <p align="center">
