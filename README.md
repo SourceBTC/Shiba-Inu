@@ -30,8 +30,8 @@ forked from datacite/shiba-inu
 </div>
 
 <div align="center">
-  <a href="https://github.com/softprops/action-gh-release/actions">
-		<img src="https://github.com/softprops/action-gh-release/workflows/Main/badge.svg"/>
+  <a href="https://github.com/SourceBTC/Shiba-Inu/actions">
+		<img src="https://github.com/SourceBTC/action-gh-release/workflows/Main/badge.svg"/>
 	</a>
 </div>
 
