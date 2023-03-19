@@ -286,6 +286,12 @@ The following `step.env` keys are allowed as a fallback but deprecated in favor 
 
 ### Permissions
 
+
+    "name": "Labeler",
+    "description": "Labels pull requests based on the files changed",
+    "iconName": "octicon tag",
+    "categories": ["Automation", "SDLC"]
+
 This Action requires the following permissions on the GitHub integration token:
 
 ```yaml
