@@ -312,17 +312,29 @@ permissions:
 Doug Tangren (softprops) 2023
 
 
-Installation 
-    "name": "Manual workflow",
-    "description": "Simple workflow that is manually triggered.",
-    "iconName": "octicon person",
-    "categories": ["Automation"]
-Requirements
+using Docker. you will need to set the following enviroment variables:
 
-A Elasticsearch instance
-Single line logs with DOI names.
-One can run the logs processor using Docker. you will need to set the following enviroment variables:
+const core = require('@actions/core');
+const wait = require('./wait');
 
+
+// most @actions toolkit packages have async methods
+async function run() {
+  try {
+    const ms = core.getInput('milliseconds');
+    core.info(`Waiting ${ms} milliseconds ...`);
+
+    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
+    await wait(parseInt(ms));
+    core.info((new Date()).toTimeString());
+
+    core.setOutput('time', new Date().toTimeString());
+  } catch (error) {
+    core.setFailed(error.message);
+  }
+}
+
+run();
 ES_HOST=http://elasticsearch:9200
 ES_INDEX=resolutions
 INPUT_DIR=/usr/share/logstash/tmp/DataCite-access.log-201805
