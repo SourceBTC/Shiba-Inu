@@ -30,14 +30,14 @@ forked from datacite/shiba-inu
 </div>
 
 <div align="center">
-  <a   <img src="demo.png"/>
+  <a   <img src="https://github.com/SourceBTC/Shiba-In"/>
 </div>
 
 <div align="center">
   <a href="https://github.com/softprops/action-gh-release/actions">
 		<img src="https://github.com/softprops/action-gh-release/workflows/Main/badge.svg"/>
 		
-	</a>
+	
 </div>
 
 <br />
