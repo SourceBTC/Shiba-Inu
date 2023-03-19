@@ -26,7 +26,7 @@ forked from datacite/shiba-inu
 </p>
 
 <div align="center">
-  <img src="https://https://github.com/SourceBTC/Shiba-Inu/actions/>
+  <a href="https://https://github.com/SourceBTC/Shiba-Inu/actions/>
 </div>
 
 <div align="center">
