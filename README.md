@@ -3,17 +3,11 @@
 
 # Pipeline for DOI Resolution Logs processing
 Build Status [Docker Build Status] Test Coverage Maintainability
+# ZeuZZueZ
 
-Shiba-Inu is pipeline for DOI Resolution Logs processing. The pipeline processes DOI resolution logs following the Code of practice for research data usage metrics. Its based in Logstash.
+# shiba-inu
 
-The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-
-
-ZeuZZueZ
-/
-shiba-inu
-Public
-forked from datacite/shiba-inu
+# forked from datacite/shiba-inu
 
 <div align="center"> shiba-inu blockchain 🐶
   📦 :octocat:
